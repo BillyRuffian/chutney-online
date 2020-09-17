@@ -1,6 +1,8 @@
 %h1 Chutney#index
 %p Find me in app/views/chutney/index.html.haml
 
+= debug I18n.load_path
+
 = form_with local: true do
 	= text_area_tag :feature, @feature, id: :notepad
 	= submit_tag 'Submit'
