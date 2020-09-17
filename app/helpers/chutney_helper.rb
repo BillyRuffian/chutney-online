@@ -1,0 +1,2 @@
+module ChutneyHelper
+end
