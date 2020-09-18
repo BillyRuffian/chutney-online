@@ -4,8 +4,8 @@ class ChutneyController < ApplicationController
       begin
         @feature = lint_params[:feature]
         @report = ReportDecorator.new(lint(@feature).first.last)
-      rescue Gherkin::CompositeParserException => e
-        @parse_error = e.message
+      rescue StandardError => e
+        @parse_error = e
       end
     end
   end

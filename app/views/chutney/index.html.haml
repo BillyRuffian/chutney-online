@@ -16,9 +16,30 @@
 						.control
 							= submit_tag 'Check my Gherkin', class: 'button is-primary'
 				
-				= javascript_pack_tag 'dragdrop', 'data-turbolinks-track': 'reload'
+				
 			
 
-%section
-	= debug @parse_error
-	= debug @report&.with_problems()
+- if @parse_error
+	%section#result.has-text-centered.py-6.has-background-danger.has-text-light
+		%h1.title This isn't Gherkin!
+		%h2.subtitle Your input couldn't be parsed
+		%p
+			Have a look at the offical
+			%a(href="https://cucumber.io/docs/gherkin/reference/") Gherkin Reference
+			documentation of you need help
+- elsif @report
+	- if @report.with_problems.empty?
+		%section#result.has-text-centered.py-6.has-background-success
+			%h1.title	This is delicious!
+			%h2.subtitle No issues found
+	- else
+		%section#result
+			%table.table
+				%tbody
+					- @report.issues.each do |issue|
+						%tr
+							%td= "Line #{issue[:location][:line]}"
+							%td= issue[:message]
+					
+	
+= javascript_pack_tag 'dragdrop', 'data-turbolinks-track': 'reload'
