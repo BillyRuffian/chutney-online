@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/BillyRuffian/chutney
-  revision: 671c0a7f69c663e36f73cf3426db22fc4ea68c27
+  revision: c3685196277c53b51024260b46662775ff3be48e
   branch: feature/chutney-3
   specs:
     chutney (3.0.0.beta.2)
