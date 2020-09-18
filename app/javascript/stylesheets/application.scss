@@ -1,12 +1,22 @@
 
-
+$body-background-color-x: #6ed27b;
 
 @import '~bulma';
 
+.is-pickle {
+  background-color: #6ed27b;
+}
+
+.is-pickle .is-primary {
+  background-color: #16551e;
+}
 
 .feature {
   white-space: pre;
   font-family: "Source Code Pro", monospace;
   font-size: 0.9em;
   min-height: 30em !important;
+  
+  box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0px 0 1px rgba(10, 10, 10, 0.02);
+  border-radius: 12px;
 }
