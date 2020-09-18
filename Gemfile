@@ -51,3 +51,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'chutney',  git: 'https://github.com/BillyRuffian/chutney', branch: 'feature/chutney-3'
 gem "haml-rails", "~> 2.0"
+
+gem "high_voltage", "~> 3.1"

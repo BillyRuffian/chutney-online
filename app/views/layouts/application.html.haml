@@ -13,16 +13,21 @@
       .navbar-brand
         %a.navbar-item(href=root_path)
           = image_tag 'chutney.png'
-          %strong.pl-3 Chutney
+          %strong.pl-3 Chutney Online
         %a.navbar-burger.burger(role='button' arial-label='menu' aria-expanded="false" data-target="menuitems")
           %span(aria-hidden='true')
           %span(aria-hidden='true')
           %span(aria-hidden='true')
       #menuitems.navbar-menu
         .navbar-item
-          %div
-            Foo
+          = link_to 'About', page_path('hello')
+        .navbar-item
+          = link_to 'Rules', page_path('hello')
         .navbar-item
           %div
             Bar
     = yield
+  
+    %footer.footer
+      .content
+        %p &copy; 2020 Billy Ruffian
