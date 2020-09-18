@@ -5,7 +5,22 @@
     %title Chutney
     = csrf_meta_tags
     = csp_meta_tag
-    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   %body
+    %nav.navbar(role='navigation' arial-label='main navigation')
+      .navbar-brand
+        .navbar-item
+          %div Chutney
+        %a.navbar-burger.burger(role='button' arial-label='menu' aria-expanded="false" data-target="menuitems")
+          %span(aria-hidden='true')
+          %span(aria-hidden='true')
+          %span(aria-hidden='true')
+      #menuitems.navbar-menu
+        .navbar-item
+          %div
+            Foo
+        .navbar-item
+          %div
+            Bar
     = yield
