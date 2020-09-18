@@ -38,7 +38,7 @@
 				%tbody
 					- @report.issues.each do |issue|
 						%tr
-							%td= "Line #{issue[:location][:line]}"
+							%td= "Line #{issue.dig(:location, :line)}"
 							%td= issue[:message]
 					
 	

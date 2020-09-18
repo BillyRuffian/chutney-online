@@ -5,6 +5,6 @@ class ReportDecorator < SimpleDelegator
   end
   
   def issues
-    collect { |linter| linter[:issues] }.flatten.sort { |issue| issue[:location][:line] }
+    collect { |linter| linter[:issues] }.flatten.sort { |issue| issue.dig(:location, :line) }
   end
 end
