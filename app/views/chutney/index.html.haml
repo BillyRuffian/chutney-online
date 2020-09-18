@@ -9,7 +9,7 @@
 			.field
 				= label_tag :feature, 'Your Gherkin feature', class: 'label'
 				.control
-					= text_area_tag :feature, @feature, id: :notepad, class: 'textarea', placeholder: 'Feature: My awesome feature'
+					= text_area_tag :feature, @feature, id: :notepad, class: 'textarea feature', placeholder: 'Feature: My awesome feature'
 			.field.has-text-centered
 				.control
 					= submit_tag 'Submit', class: 'button is-link'
