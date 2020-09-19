@@ -1,24 +1,3 @@
-%section.is-pickle
-	.container.pt-6.pb-6
-		.columns.is-vcentered
-			.column.has-text-centered.is-hidden-mobile
-				.icon.is-large
-					%i.fas.fa-3x.fa-share
-				%p
-					Paste a Gherkin feature or drop a file
-			.column.is-three-quarters
-				= form_with local: true, url: root_path do
-					.field
-						= label_tag :feature, 'Your Gherkin feature', class: 'label'
-						.control
-							= text_area_tag :feature, @feature, id: :notepad, class: 'textarea feature', placeholder: 'Feature: My awesome feature'
-					.field.has-text-centered
-						.control
-							= submit_tag 'Check my Gherkin', class: 'button is-primary'
-				
-				
-			
-
 - if @parse_error
 	%section#result.has-text-centered.py-6.has-background-danger.has-text-light
 		%h1.title This isn't Gherkin!
@@ -40,6 +19,29 @@
 						%tr
 							%td= "Line #{issue.dig(:location, :line)}"
 							%td= issue[:message]
+
+%section.is-pickle
+	.container.pt-6.pb-6
+		.columns.is-vcentered
+			.column.has-text-centered.is-hidden-mobile
+				.icon.is-large
+					%i.fas.fa-3x.fa-share
+				%p
+					Paste a Gherkin feature or drop a file
+			.column.is-three-quarters
+				= form_with local: true, url: root_path do
+					.field
+						= label_tag :feature, 'Your Gherkin feature', class: 'label'
+						.control
+							= text_area_tag :feature, @feature, id: :notepad, class: 'textarea feature', placeholder: 'Feature: My awesome feature'
+					.field.has-text-centered
+						.control
+							= submit_tag 'Check my Gherkin', class: 'button is-primary'
+				
+				
+			
+
+
 					
 	
 = javascript_pack_tag 'dragdrop', 'data-turbolinks-track': 'reload'
