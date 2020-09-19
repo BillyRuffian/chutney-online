@@ -16,5 +16,11 @@ require("channels")
 // const imagePath = (name) => images(name, true)
 
 require("@vizuaalog/bulmajs")
-import "@fortawesome/fontawesome-free/js/all"
+
+import { config, library, dom } from '@fortawesome/fontawesome-svg-core'
+import { faShare as fasFaShare } from '@fortawesome/free-solid-svg-icons' // ES Module "as" syntax
+config.mutateApproach = 'sync'
+library.add(fasFaShare)
+dom.watch()
+
 import '../stylesheets/application'
