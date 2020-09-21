@@ -1,0 +1,9 @@
+:ruby
+  title = 'Too Many Tags'
+  description = <<~DESC
+    If you have lots of tags, it turns into tag-soup and becomes hard to read. Be wary of
+    hiding behaviour behind tags.
+  DESC
+
+= render partial: 'pages/rules/layout', locals: { title: title,
+                                                  description: description}

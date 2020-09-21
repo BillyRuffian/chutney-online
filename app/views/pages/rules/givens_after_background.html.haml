@@ -1,0 +1,11 @@
+:ruby
+  title = 'Givens After Background'
+  description = <<~DESC
+    If you have a background step, you should avoid using the 'Given' keyword in your
+    scenarios. Instead, if you need to do further work on pre-conditions, start your
+    scenarios with the 'And' keyword. This makes it clear that they are continuing
+    from the work performed in the background step.
+  DESC
+
+= render partial: 'pages/rules/layout', locals: { title: title,
+                                                  description: description}

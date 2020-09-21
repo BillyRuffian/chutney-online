@@ -1,0 +1,9 @@
+:ruby
+  title = 'File Name Differs from Feature Name'
+  description = <<~DESC
+    The name of the feature file should be equivalent to the feature name. 
+    Making the names the same makes it much easier to find features.
+  DESC
+
+= render partial: 'pages/rules/layout', locals: { title: title,
+                                                  description: description}

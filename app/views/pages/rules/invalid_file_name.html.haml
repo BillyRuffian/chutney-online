@@ -1,0 +1,9 @@
+:ruby
+  title = 'Invalid File Name'
+  description = <<~DESC
+    The name on the feature file should be all in lower case and separated with 
+    underscores. You should avoid using uppcase letters or spaces in the file name.
+  DESC
+
+= render partial: 'pages/rules/layout', locals: { title: title,
+                                                  description: description}

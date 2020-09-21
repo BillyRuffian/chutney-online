@@ -1,0 +1,8 @@
+:ruby
+  title = 'Unknown Variable'
+  description = <<~DESC
+    Be careful not to reference a variable which has not been declared in your example tables.
+  DESC
+
+= render partial: 'pages/rules/layout', locals: { title: title,
+                                                  description: description}

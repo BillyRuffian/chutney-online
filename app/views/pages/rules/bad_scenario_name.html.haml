@@ -1,0 +1,13 @@
+:ruby
+  title = 'Bad Scenario Name'
+  description = <<~DESC
+    You should avoid words like 'test' and 'check' in your scenario name because
+    this rarely describes what a user is trying to do with your system so you should
+    phrase your language in those terms. The exception here is when you are being
+    precise and trying to write something along the lines of 'When a patient submits
+    their test sample' in which case you should disable this rule or use the 
+    '@disableBadScenarioName' tag in this feature / scenario.
+  DESC
+
+= render partial: 'pages/rules/layout', locals: { title: title,
+                                                  description: description}

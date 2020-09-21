@@ -1,0 +1,9 @@
+:ruby
+  title = 'Unique Scenario Names'
+  description = <<~DESC
+    Scenario names should be unique with a feature. Avoid duplicating them, it makes it
+    harder to understand the intention and purpose of them.
+  DESC
+
+= render partial: 'pages/rules/layout', locals: { title: title,
+                                                  description: description}

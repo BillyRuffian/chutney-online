@@ -25,29 +25,159 @@
       %td= link_to 'Avoid full stop', page_path('rules/avoid_full_stop')
       %td Don't use a full stop in your step
       %td 
-        %i.fas.fa-check.is-success
+        %i.fas.fa-check
     %tr
       %td= link_to 'Avoid outline for single example', page_path('rules/avoid_outline_for_single_example')
       %td If you only have one example, don't use a Scenario Outline
       %td 
-        %i.fas.fa-check.is-success
+        %i.fas.fa-check
     %tr
       %td= link_to 'Avoid scripting', page_path('rules/avoid_scripting')
       %td Long scenarios aren't descriptive
       %td 
-        %i.fas.fa-check.is-success
+        %i.fas.fa-check
     %tr
       %td= link_to 'Avoid Typographer\'s Quotes', page_path('rules/avoid_typographers_quotes')
       %td You have curly-quotes in your scenario
       %td 
-        %i.fas.fa-check.is-success
+        %i.fas.fa-check
     %tr
       %td= link_to 'Background Does More Than Setup', page_path('rules/background_does_more_than_setup')
       %td You are trying to do too much in your background step
       %td 
-        %i.fas.fa-check.is-success
+        %i.fas.fa-check
     %tr
       %td= link_to 'Background Requires Multiple Scenarios', page_path('rules/background_requires_multiple_scenarios')
       %td If you only have one scenario, don't use a background step
       %td 
-        %i.fas.fa-check.is-success
+        %i.fas.fa-check
+    %tr
+      %td= link_to 'Bad Scenario Name', page_path('rules/bad_scenario_name')
+      %td Avoid using words like 'test' and 'check'
+      %td 
+        %i.fas.fa-check
+    %tr
+      %td= link_to 'Empty Feature File', page_path('rules/empty_feature_file')
+      %td There's nothing here
+      %td 
+        %i.fas.fa-check
+    %tr
+      %td= link_to 'File Name Differs from Feature Name', page_path('rules/file_name_differs_feature_name')
+      %td The file name differs from the feature name
+      %td 
+        %i.fas.fa-times
+    %tr
+      %td= link_to 'Givens After Background', page_path('rules/givens_after_background')
+      %td If you have a background step, avoid using 'Given' in your scenarios
+      %td 
+        %i.fas.fa-check
+    %tr
+      %td= link_to 'Invalid File Name', page_path('rules/invalid_file_name')
+      %td Naming your feature files
+      %td 
+        %i.fas.fa-times
+    %tr
+      %td= link_to 'Invalid Step Flow', page_path('rules/invalid_step_flow')
+      %td Given, When, Then
+      %td 
+        %i.fas.fa-check
+    %tr
+      %td= link_to 'Missing Example Name', page_path('rules/missing_example_name')
+      %td Name your example tables when you have more than one
+      %td 
+        %i.fas.fa-check
+    %tr
+      %td= link_to 'Missing Feature Description', page_path('rules/missing_feature_description')
+      %td Describe your feature or use a value statement
+      %td 
+        %i.fas.fa-check
+    %tr
+      %td= link_to 'Missing Feature Name', page_path('rules/missing_feature_name')
+      %td Features should be named
+      %td 
+        %i.fas.fa-check
+    %tr
+      %td= link_to 'Missing Scenario Name', page_path('rules/missing_scenario_name')
+      %td Features should be named
+      %td 
+        %i.fas.fa-check
+    %tr
+      %td= link_to 'Missing Test Action', page_path('rules/missing_test_action')
+      %td All scenarios need a 'When' step
+      %td 
+        %i.fas.fa-check
+    %tr
+      %td= link_to 'Missing Verification', page_path('rules/missing_verification')
+      %td All scenarios need a 'Then' step
+      %td 
+        %i.fas.fa-check
+    %tr
+      %td= link_to 'Required Tags Start With', page_path('rules/required_tags_start_with')
+      %td An optional naming convention for tags
+      %td 
+        %i.fas.fa-times
+    %tr
+      %td= link_to 'Same Tag for All Scenarios', page_path('rules/same_tag_for_all_scenarios')
+      %td Use a feature level tag if all scenarios share the same one
+      %td 
+        %i.fas.fa-check
+    %tr
+      %td= link_to 'Scenario Names Match', page_path('rules/scenario_names_match')
+      %td An optional naming convention for scenarios
+      %td 
+        %i.fas.fa-times
+    %tr
+      %td= link_to 'Tag Used Multiple Times', page_path('rules/tag_used_multiple_times')
+      %td A lot of uses of a particular tag
+      %td 
+        %i.fas.fa-check
+    %tr
+      %td= link_to 'Too Clumsy', page_path('rules/too_clumsy')
+      %td Avoid very long scenarios
+      %td 
+        %i.fas.fa-check        
+    %tr
+      %td= link_to 'Too Long Step', page_path('rules/too_long_step')
+      %td Avoid very long steps
+      %td 
+        %i.fas.fa-check 
+    %tr
+      %td= link_to 'Too Many Different Tags', page_path('rules/too_many_different_tags')
+      %td Avoid have lots of different tags
+      %td 
+        %i.fas.fa-check  
+    %tr
+      %td= link_to 'Too Many Steps', page_path('rules/too_many_steps')
+      %td Keep scenarios concise
+      %td 
+        %i.fas.fa-check
+    %tr
+      %td= link_to 'Too Many Tags', page_path('rules/too_many_tags')
+      %td Avoid have lots of different tags
+      %td 
+        %i.fas.fa-check
+    %tr
+      %td= link_to 'Unique Scenario Names', page_path('rules/unique_scenario_names')
+      %td All scenarios should have a unique name
+      %td 
+        %i.fas.fa-check
+    %tr
+      %td= link_to 'Unknown Variable', page_path('rules/unknown_variable')
+      %td All variables should be defined
+      %td 
+        %i.fas.fa-check
+    %tr
+      %td= link_to 'Unused Variable', page_path('rules/unused_variable')
+      %td All variables should be used
+      %td 
+        %i.fas.fa-check
+    %tr
+      %td= link_to 'Use Background', page_path('rules/use_background')
+      %td Move comment setup in to a background step
+      %td 
+        %i.fas.fa-check
+    %tr
+      %td= link_to 'Use Outline', page_path('rules/use_outline')
+      %td Use Scenario Outlines for similar scenarios
+      %td 
+        %i.fas.fa-check

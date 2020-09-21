@@ -1,0 +1,9 @@
+:ruby
+  title = 'Unused Variable'
+  description = <<~DESC
+    If there is a variable in an example table and it is not being used, then it should be removed.
+    If you are using it to give a description of the example, use a regular comment instead.
+  DESC
+
+= render partial: 'pages/rules/layout', locals: { title: title,
+                                                  description: description}
