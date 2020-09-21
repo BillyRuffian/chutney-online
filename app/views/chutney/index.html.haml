@@ -1,3 +1,4 @@
+
 - if @parse_error
 	%section#result.has-text-centered.py-6.has-background-danger.has-text-light
 		%h1.title This isn't Gherkin!
@@ -12,13 +13,19 @@
 			%h1.title	This is delicious!
 			%h2.subtitle No issues found
 	- else
-		%section#result
-			%table.table
-				%tbody
-					- @report.issues.each do |issue|
-						%tr
-							%td= "Line #{issue.dig(:location, :line)}"
-							%td= issue[:message]
+		%section#result.has-background-warning.py-6
+			.container.has-text-centered.block
+				%h1.title Improvements Needed
+				%h2.subtitle
+					= pluralize(@report.issues.count, 'Warning')
+			.container.block
+				%table.table.is-fullwidth.has-background-warning.py-6
+					%tbody
+						- @report.issues.each do |issue|
+							%tr
+								%td= "Line #{issue.dig(:location, :line)}"
+								%td= issue[:message]
+								%td= link_to 'more info', page_path("rules/#{issue[:linter].underscore}"), class: 'button is-small is-text'
 
 %section.is-pickle
 	.container.pt-6.pb-6
