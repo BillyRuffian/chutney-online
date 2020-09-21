@@ -1,0 +1,12 @@
+:ruby
+  title = 'Avoid Scripting'
+  description = <<~DESC
+    Long scenarios are often an indication that the Gherkin is being written
+    as if it were a script. Lots of 'fills in this field', 'clicks this button',
+    etc. describe the path through a user interface but do little to explain
+    what the purpose of it is. Wrap lots of activities in higher-order steps
+    and reserve the detail for just thing you are testing.
+  DESC
+
+= render partial: 'pages/rules/layout', locals: { title: title,
+                                                  description: description}

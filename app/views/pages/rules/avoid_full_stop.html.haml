@@ -1,0 +1,11 @@
+:ruby
+  title = 'Avoid Full Stops'
+  description = <<~DESC
+    You should avoid having full stops (periods) in your step definitions.
+    It makes it harder to reuse your steps in other places. While the goal is
+    to make the specifications as readable and meaningful as possible, a full stop
+    can break the flow of the language if you use it in some other step.
+  DESC
+
+= render partial: 'pages/rules/layout', locals: { title: title,
+                                                  description: description}

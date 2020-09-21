@@ -1,0 +1,10 @@
+:ruby
+  title = 'Background Requires Multiple Scenarios'
+  description = <<~DESC
+    If you only have one scenario in your feature, you should avoid having a background step
+    and more your pre-conditions into the scenario instead. It improves the readability of
+    the scenario.
+  DESC
+
+= render partial: 'pages/rules/layout', locals: { title: title,
+                                                  description: description}

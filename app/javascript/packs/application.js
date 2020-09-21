@@ -19,8 +19,10 @@ require("@vizuaalog/bulmajs")
 
 import { config, library, dom } from '@fortawesome/fontawesome-svg-core'
 import { faShare as fasFaShare } from '@fortawesome/free-solid-svg-icons' // ES Module "as" syntax
+import { faCheck as fasFaCheck } from '@fortawesome/free-solid-svg-icons' // ES Module "as" syntax
+import { faTimes as fasFaTimes } from '@fortawesome/free-solid-svg-icons' // ES Module "as" syntax
 config.mutateApproach = 'sync'
-library.add(fasFaShare)
+library.add(fasFaShare, fasFaCheck, fasFaTimes)
 dom.watch()
 
 import '../stylesheets/application'

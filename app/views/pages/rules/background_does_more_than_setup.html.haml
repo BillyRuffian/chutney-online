@@ -1,0 +1,10 @@
+:ruby
+  title = 'Background Does More Than Setup'
+  description = <<~DESC
+    The background step should only ever do common things to get the pre-conditions
+    of the feature set up. It should never have 'When' steps and never have 'Then'
+    steps.
+  DESC
+
+= render partial: 'pages/rules/layout', locals: { title: title,
+                                                  description: description}

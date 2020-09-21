@@ -1,0 +1,10 @@
+:ruby
+  title = 'Avoid Outline for Single Example'
+  description = <<~DESC
+    If you only have a single example in your Scenario Outline, you should
+    change it to Scenrio because it will make make it easier to understand
+    the intention behind it.
+  DESC
+
+= render partial: 'pages/rules/layout', locals: { title: title,
+                                                  description: description}

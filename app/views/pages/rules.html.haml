@@ -1,0 +1,53 @@
+%section.hero.is-success
+  .hero-body
+    .container
+      %h1.title Rules
+      %h2.subtitle All of Chutney's linting rules
+        
+      %p.block
+        Chutney has a long list of rules to help you build best-practice in your Cucumber / Gherkin features.
+        Using Chutney locally, you build a configuration to turn off rules (and configure others).
+        
+      %p.block
+        There is lots more information in the Chutney documentation which you can read about
+        = succeed '.' do
+          %a(href='https://billyruffian.github.io/chutney/')here
+          
+%section.container.py-6
+  %table.table.is-striped.is-fullwidth
+    %thead.has-text-left
+      %tr
+        %th Rule
+        %th Description
+        %th Enabled online
+    %tbody
+    %tr
+      %td= link_to 'Avoid full stop', page_path('rules/avoid_full_stop')
+      %td Don't use a full stop in your step
+      %td 
+        %i.fas.fa-check.is-success
+    %tr
+      %td= link_to 'Avoid outline for single example', page_path('rules/avoid_outline_for_single_example')
+      %td If you only have one example, don't use a Scenario Outline
+      %td 
+        %i.fas.fa-check.is-success
+    %tr
+      %td= link_to 'Avoid scripting', page_path('rules/avoid_scripting')
+      %td Long scenarios aren't descriptive
+      %td 
+        %i.fas.fa-check.is-success
+    %tr
+      %td= link_to 'Avoid Typographer\'s Quotes', page_path('rules/avoid_typographers_quotes')
+      %td You have curly-quotes in your scenario
+      %td 
+        %i.fas.fa-check.is-success
+    %tr
+      %td= link_to 'Background Does More Than Setup', page_path('rules/background_does_more_than_setup')
+      %td You are trying to do too much in your background step
+      %td 
+        %i.fas.fa-check.is-success
+    %tr
+      %td= link_to 'Background Requires Multiple Scenarios', page_path('rules/background_requires_multiple_scenarios')
+      %td If you only have one scenario, don't use a background step
+      %td 
+        %i.fas.fa-check.is-success
