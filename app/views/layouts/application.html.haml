@@ -7,8 +7,8 @@
     %title Chutney Online
     = csrf_meta_tags
     = csp_meta_tag
-    = stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
-    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+    = stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload', defer: true
+    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true
     %link(href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet")
   %body.site
     %nav.navbar.is-spaced(role='navigation' arial-label='main navigation')
