@@ -1,15 +1,3 @@
-GIT
-  remote: https://github.com/BillyRuffian/chutney
-  revision: 4aac2ed20578849bc80fb1c92238e2f4c0313b12
-  branch: feature/chutney-3
-  specs:
-    chutney (3.0.0.beta.2)
-      amatch (~> 0.4.0)
-      cuke_modeler (~> 3.3)
-      i18n (~> 1.8.2)
-      pastel (~> 0.7)
-      tty-pie (~> 0.3)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -87,6 +75,12 @@ GEM
       regexp_parser (~> 1.5)
       xpath (~> 3.2)
     childprocess (3.0.0)
+    chutney (3.0.0)
+      amatch (~> 0.4.0)
+      cuke_modeler (~> 3.3)
+      i18n (~> 1.8.2)
+      pastel (~> 0.7)
+      tty-pie (~> 0.3)
     coderay (1.1.3)
     concurrent-ruby (1.1.7)
     crass (1.0.6)
@@ -265,7 +259,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.2)
   byebug
   capybara (>= 2.15)
-  chutney!
+  chutney (~> 3.0)
   haml-rails (~> 2.0)
   high_voltage (~> 3.1)
   jbuilder (~> 2.7)
