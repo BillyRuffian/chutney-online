@@ -11,10 +11,14 @@ $body-background-color-x: #6ed27b;
 
 .site-content {
   flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .is-pickle {
   background-color: #6ed27b;
+  flex: 1;
+  display: flex;
 }
 
 .is-pickle .is-primary {
