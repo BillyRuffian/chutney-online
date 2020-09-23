@@ -3,8 +3,27 @@
   .hero-body
     .container
       %h1.title
-        = title
+        = yield :title
       %p.block
-        = description
+        = yield :description
+      - if content_for?(:good_example) && content_for?(:bad_example)
+        %p.block
+          For example:
+          .columns
+            .column
+              .panel.is-danger
+                .panel-heading
+                  Bad
+                .panel-block.has-background-light
+                  %pre
+                    = yield :bad_example
+                        
+            .column
+              .panel.is-info
+                .panel-heading
+                  Good
+                .panel-block.has-background-light
+                  %pre
+                    = yield :good_example
       %p.block
         = link_to 'Go Back', 'javascript:history.go(-1);'

@@ -1,8 +1,8 @@
-:ruby
-  title = 'Tag Used Multiple Times'
-  description = <<~DESC
+- content_for :title do
+  Tag Used Multiple Times
+    
+- content_for :description do
+  %p.block
     High usage of a particular tag might be hiding behaviour.
-  DESC
 
-= render partial: 'pages/rules/layout', locals: { title: title,
-                                                  description: description}
+= render partial: 'pages/rules/layout'

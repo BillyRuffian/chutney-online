@@ -1,10 +1,38 @@
-:ruby
-  title = 'Avoid Outline for Single Example'
-  description = <<~DESC
-    If you only have a single example in your Scenario Outline, you should
-    change it to Scenrio because it will make make it easier to understand
+- content_for :title do
+  Avoid Outline for Single Example
+  
+- content_for :description do
+  %p.block
+    If you only have
+    %strong one 
+    example in your Scenario Outline, you should
+    change it to Scenario because it will make make it easier to understand
     the intention behind it.
-  DESC
 
-= render partial: 'pages/rules/layout', locals: { title: title,
-                                                  description: description}
+- content_for :bad_example do
+  :preserve
+    Feature: My feature
+      As a Gherkin writer
+      I want to write good Gherkin
+      So my intent is clear
+      
+      Scenario Outline: My Scenario
+        When I write "&lt;language&gt;"
+        Then my Gherkin will be delicious
+        
+        Examples: of specification languages
+          | Language |
+          | Gherkin  |
+
+- content_for :good_example do
+  :preserve
+    Feature: My feature
+      As a Gherkin writer
+      I want to write good Gherkin
+      So my intent is clear
+      
+      Scenario: My Scenario
+        When I write "Gherkin"
+        Then my Gherkin will be delicious
+
+= render partial: 'pages/rules/layout'

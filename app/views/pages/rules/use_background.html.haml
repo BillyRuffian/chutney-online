@@ -1,9 +1,45 @@
-:ruby
-  title = 'Use Background'
-  description = <<~DESC
+- content_for :title do
+  Use Background
+  
+- content_for :description do
+  %p.block
     If all your scenarios use the same Given set up steps, you should move these
     to a Background step instead.
-  DESC
 
-= render partial: 'pages/rules/layout', locals: { title: title,
-                                                  description: description}
+- content_for :bad_example do
+  :preserve
+    Feature: My feature
+      As a Gherkin writer
+      I want to write good Gherkin
+      So my intent is clear
+      
+      Scenario: Writing Gherkin
+        Given I am logged in
+        When I write "Gherkin"
+        Then my tests will pass
+
+      Scenario: Writing RSpec
+        Given I am logged in
+        When I write "RSpec"
+        Then my tests will pass
+
+- content_for :good_example do
+  :preserve
+    Feature: My feature
+      As a Gherkin writer
+      I want to write good Gherkin
+      So my intent is clear
+      
+      Background:
+        Given I am logged in
+
+      Scenario: Writing Gherkin
+        When I write "Gherkin"
+        Then my tests will pass
+
+      Scenario: Writing RSpec
+        When I write "RSpec"
+        Then my tests will pass
+
+
+= render partial: 'pages/rules/layout'

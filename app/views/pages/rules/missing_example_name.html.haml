@@ -1,10 +1,51 @@
-:ruby
-  title = 'Missing Example Name'
-  description = <<~DESC
+- content_for :title do
+  Missing Example Name
+    
+- content_for :description do
+  %p.block
     When you have more than one example table, you should give them a name
-    so that it's clear how you have grouped them. You can name example tables
-    like a feature or a scenario, e.g. 'Examples: of valid names'.
-  DESC
+    so that it's clear how you have grouped them.
 
-= render partial: 'pages/rules/layout', locals: { title: title,
-                                                  description: description}
+- content_for :bad_example do
+  :preserve
+    Feature: My feature
+      As a Gherkin writer
+      I want to write good Gherkin
+      So my intent is clear
+      
+      Scenario Outline: My Scenario
+        When I use "&lt;Specification Framework&gt;"
+        Then my Gherkin will be delicious
+
+        Examples:
+          | Specification Framework |
+          | Cucumber                |
+          | Lettuce                 |
+
+        Examples:
+          | Specification Framework |
+          | Pumpkin                 |
+          | Turnip                  |
+
+- content_for :good_example do
+  :preserve
+    Feature: My feature
+      As a Gherkin writer
+      I want to write good Gherkin
+      So my intent is clear
+      
+      Scenario Outline: My Scenario
+        When I use "&lt;Specification Framework&gt;"
+        Then my Gherkin will be delicious
+
+        Examples: of real frameworks
+          | Specification Framework |
+          | Cucumber                |
+          | Lettuce                 |
+
+        Examples: of fictional frameworks
+          | Specification Framework |
+          | Pumpkin                 |
+          | Turnip                  |
+
+= render partial: 'pages/rules/layout'

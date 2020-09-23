@@ -1,11 +1,43 @@
-:ruby
-  title = 'Givens After Background'
-  description = <<~DESC
+- content_for :title do
+  Givens After Background
+    
+- content_for :description do
+  %p.block
     If you have a background step, you should avoid using the 'Given' keyword in your
-    scenarios. Instead, if you need to do further work on pre-conditions, start your
+    scenarios. 
+  %p.block
+    Instead, if you need to do further work on pre-conditions, start your
     scenarios with the 'And' keyword. This makes it clear that they are continuing
     from the work performed in the background step.
-  DESC
 
-= render partial: 'pages/rules/layout', locals: { title: title,
-                                                  description: description}
+- content_for :bad_example do
+  :preserve
+    Feature: My feature
+      As a Gherkin writer
+      I want to write good Gherkin
+      So my intent is clear
+      
+      Background:
+        Given I have written Gherkin
+
+      Scenario: My Scenario
+        Given I have saved my work
+        When I use Chutney
+        Then my Gherkin will be delicious
+
+- content_for :good_example do
+  :preserve
+    Feature: My feature
+      As a Gherkin writer
+      I want to write good Gherkin
+      So my intent is clear
+      
+      Background:
+        Given I have written Gherkin
+
+      Scenario: My Scenario
+        And I have saved my work
+        When I use Chutney
+        Then my Gherkin will be delicious
+
+= render partial: 'pages/rules/layout'

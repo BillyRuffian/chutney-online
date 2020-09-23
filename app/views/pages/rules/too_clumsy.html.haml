@@ -1,8 +1,8 @@
-:ruby
-  title = 'Too Clumsy'
-  description = <<~DESC
+- content_for :title do
+  Too Clumsy
+    
+- content_for :description do
+  %p.block
     Very long scenarios are hard to read. Consider writing it more concisely.
-  DESC
 
-= render partial: 'pages/rules/layout', locals: { title: title,
-                                                  description: description}
+= render partial: 'pages/rules/layout'

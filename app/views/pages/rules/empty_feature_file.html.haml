@@ -1,8 +1,8 @@
-:ruby
-  title = 'Empty Feature File'
-  description = <<~DESC
+- content_for :title do
+  Empty Feature File
+    
+- content_for :description do
+  %p.block
     The feature file is empty. You probably meant to write something here.
-  DESC
 
-= render partial: 'pages/rules/layout', locals: { title: title,
-                                                  description: description}
+= render partial: 'pages/rules/layout'

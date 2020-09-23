@@ -1,9 +1,30 @@
-:ruby
-  title = 'Missing Feature Name'
-  description = <<~DESC
-    All features should have a name that succinctly describes it. For example, 
-    'Feature: Customer email notifications'.
-  DESC
+- content_for :title do
+  Missing Feature Name
+    
+- content_for :description do
+  %p.block
+    All features should have a name that succinctly describes it
 
-= render partial: 'pages/rules/layout', locals: { title: title,
-                                                  description: description}
+- content_for :bad_example do
+  :preserve
+    Feature:
+      As a Gherkin writer
+      I want to write good Gherkin
+      So my intent is clear
+      
+      Scenario: My Scenario
+        When I write "Gherkin"
+        Then my Gherkin will be delicious
+
+- content_for :good_example do
+  :preserve
+    Feature: My feature
+      As a Gherkin writer
+      I want to write good Gherkin
+      So my intent is clear
+      
+      Scenario: My Scenario
+        When I write "Gherkin"
+        Then my Gherkin will be delicious
+
+= render partial: 'pages/rules/layout'

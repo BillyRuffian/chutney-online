@@ -1,9 +1,41 @@
-:ruby
-  title = 'Unused Variable'
-  description = <<~DESC
+- content_for :title do
+  Unused Variable
+    
+- content_for :description do
+  %p.block
     If there is a variable in an example table and it is not being used, then it should be removed.
     If you are using it to give a description of the example, use a regular comment instead.
-  DESC
 
-= render partial: 'pages/rules/layout', locals: { title: title,
-                                                  description: description}
+- content_for :bad_example do
+  :preserve
+    Feature: My feature
+      As a Gherkin writer
+      I want to write good Gherkin
+      So my intent is clear
+      
+      Scenario Outline: My Scenario
+        When I use "&lt;Specification Framework&gt;"
+        Then my Gherkin will be delicious
+
+        Examples:
+          | Specification Framework | Language |
+          | Cucumber                | Ruby     |
+          | Lettuce                 | Python   |
+
+- content_for :good_example do
+  :preserve
+    Feature: My feature
+      As a Gherkin writer
+      I want to write good Gherkin
+      So my intent is clear
+      
+      Scenario Outline: My Scenario
+        When I use "&lt;Specification Framework&gt;"
+        Then my Gherkin will be delicious
+
+        Examples:
+          | Specification Framework | # Language
+          | Cucumber                | # Ruby     
+          | Lettuce                 | # Python   
+
+= render partial: 'pages/rules/layout'

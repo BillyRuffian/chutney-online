@@ -1,10 +1,27 @@
-:ruby
-  title = 'Missing Feature Description'
-  description = <<~DESC
-    You should describe this feature, ideally by inserting a value statement in the form 
-    'As a... I want... So that' because it provides a great deal of context about the business
-    value.
-  DESC
+- content_for :title do
+  Missing Feature Description
+    
+- content_for :description do
+  %p.block
+    You should describe this feature, ideally by inserting a value statement
 
-= render partial: 'pages/rules/layout', locals: { title: title,
-                                                  description: description}
+- content_for :bad_example do
+  :preserve
+    Feature: My feature
+      
+      Scenario: My Scenario
+        When I write "Gherkin"
+        Then my Gherkin will be delicious
+
+- content_for :good_example do
+  :preserve
+    Feature: My feature
+      As a Gherkin writer
+      I want to write good Gherkin
+      So my intent is clear
+      
+      Scenario: My Scenario
+        When I write "Gherkin"
+        Then my Gherkin will be delicious
+
+= render partial: 'pages/rules/layout'

@@ -1,8 +1,40 @@
-:ruby
-  title = 'Unknown Variable'
-  description = <<~DESC
+- content_for :title do
+  Unknown Variable
+    
+- content_for :description do
+  %p.block
     Be careful not to reference a variable which has not been declared in your example tables.
-  DESC
 
-= render partial: 'pages/rules/layout', locals: { title: title,
-                                                  description: description}
+- content_for :bad_example do
+  :preserve
+    Feature: My feature
+      As a Gherkin writer
+      I want to write good Gherkin
+      So my intent is clear
+      
+      Scenario Outline: My Scenario
+        When I use "&lt;Specification Framework&gt;"
+        Then my Gherkin will be "&lt;Taste&gt;"
+
+        Examples:
+          | Specification Framework |
+          | Cucumber                |
+          | Lettuce                 |
+
+- content_for :good_example do
+  :preserve
+    Feature: My feature
+      As a Gherkin writer
+      I want to write good Gherkin
+      So my intent is clear
+      
+      Scenario Outline: My Scenario
+        When I use "&lt;Specification Framework&gt;"
+        Then my Gherkin will be "&lt;Taste&gt;"
+
+        Examples:
+          | Specification Framework | Taste   |
+          | Cucumber                | Juicy   |
+          | Lettuce                 | Crunchy |
+
+= render partial: 'pages/rules/layout'

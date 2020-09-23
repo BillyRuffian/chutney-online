@@ -1,9 +1,13 @@
-:ruby
-  title = 'Missing Test Action'
-  description = <<~DESC
+- content_for :title do
+  Missing Test Action
+    
+- content_for :description do
+  %p.block
     The action or doing step is the thing that is going to be happening in the scenario
-    and Gherkin uses the 'When' keyword for it. All scenarios need exactly one When step.
-  DESC
+    and Gherkin uses the 'When' keyword for it. 
+  %p.block
+    All scenarios need exactly one 
+    %strong When 
+    step.
 
-= render partial: 'pages/rules/layout', locals: { title: title,
-                                                  description: description}
+= render partial: 'pages/rules/layout'

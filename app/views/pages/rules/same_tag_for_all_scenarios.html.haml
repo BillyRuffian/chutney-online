@@ -1,8 +1,41 @@
-:ruby
-  title = 'Same Tag For All Scenarios'
-  description = <<~DESC
+- content_for :title do
+  Same Tag For All Scenarios
+    
+- content_for :description do
+  %p.block
     If all scenarios have the same tag, make a feature-level tag instead.
-  DESC
 
-= render partial: 'pages/rules/layout', locals: { title: title,
-                                                  description: description}
+- content_for :bad_example do
+  :preserve
+    Feature: My feature
+      As a Gherkin writer
+      I want to write good Gherkin
+      So my intent is clear
+      
+      @myTag
+      Scenario: Writing Gherkin
+        When I write "Gherkin"
+        Then my Gherkin will be delicious
+
+      @myTag
+      Scenario: Writing RSpec
+        When I write "Rspec"
+        Then my unit tests will pass
+
+- content_for :good_example do
+  :preserve
+    @myTag
+    Feature: My feature
+      As a Gherkin writer
+      I want to write good Gherkin
+      So my intent is clear
+      
+      Scenario: Writing Gherkin
+        When I write "Gherkin"
+        Then my Gherkin will be delicious
+
+      Scenario: Writing RSpec
+        When I write "Rspec"
+        Then my unit tests will pass
+
+= render partial: 'pages/rules/layout'

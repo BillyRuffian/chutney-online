@@ -1,9 +1,9 @@
-:ruby
-  title = 'Use Outline'
-  description = <<~DESC
+- content_for :title do
+  Use Outline
+    
+- content_for :description do
+  %p.block
     Scenarios which are very similar should be coalesced in to one using a Scenario 
     Outline and one or more example tables.
-  DESC
 
-= render partial: 'pages/rules/layout', locals: { title: title,
-                                                  description: description}
+= render partial: 'pages/rules/layout'

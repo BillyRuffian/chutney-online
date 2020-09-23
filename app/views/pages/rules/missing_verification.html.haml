@@ -1,10 +1,14 @@
-:ruby
-  title = 'Missing Verification'
-  description = <<~DESC
+- content_for :title do
+  Missing Verification
+    
+- content_for :description do
+  %p.block
     The verification or assertion step in Gherkin is the 'Then' step. It is at this point
-    that you should be checking on the outcome of your action. All scenarios should have at
-    least one 'Then' step.
-  DESC
+    that you should be checking on the outcome of your action. 
+  %p.block 
+    All scenarios should have at
+    least one
+    %strong Then 
+    step.
 
-= render partial: 'pages/rules/layout', locals: { title: title,
-                                                  description: description}
+= render partial: 'pages/rules/layout'

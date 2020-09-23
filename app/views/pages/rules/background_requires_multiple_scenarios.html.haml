@@ -1,10 +1,36 @@
-:ruby
-  title = 'Background Requires Multiple Scenarios'
-  description = <<~DESC
+- content_for :title do
+  Background Requires Multiple Scenarios
+    
+- content_for :description do
+  %p.block
     If you only have one scenario in your feature, you should avoid having a background step
     and more your pre-conditions into the scenario instead. It improves the readability of
     the scenario.
-  DESC
 
-= render partial: 'pages/rules/layout', locals: { title: title,
-                                                  description: description}
+- content_for :bad_example do
+  :preserve
+    Feature: My feature
+      As a Gherkin writer
+      I want to write good Gherkin
+      So my intent is clear
+      
+      Background:
+        Given I have written Gherkin
+
+      Scenario: My Scenario
+        When I use Chutney
+        Then my Gherkin will be delicious
+
+- content_for :good_example do
+  :preserve
+    Feature: My feature
+      As a Gherkin writer
+      I want to write good Gherkin
+      So my intent is clear
+      
+      Scenario: My Scenario
+        Given I have writen Gherkin
+        When I use Chutney
+        Then my Gherkin will be delicious
+
+= render partial: 'pages/rules/layout'

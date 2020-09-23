@@ -1,10 +1,10 @@
-:ruby
-  title = 'Invalid Step Flow'
-  description = <<~DESC
+- content_for :title do
+  Invalid Step Flow
+    
+- content_for :description do
+  %p.block
     Gherkin follows the Arrange, Act, Assert pattern and calls the steps Given, When, Then.
     You should follow that order of steps and should not mix them together.
     Givens steps first, followed by When steps and finally Then steps.
-  DESC
 
-= render partial: 'pages/rules/layout', locals: { title: title,
-                                                  description: description}
+= render partial: 'pages/rules/layout'

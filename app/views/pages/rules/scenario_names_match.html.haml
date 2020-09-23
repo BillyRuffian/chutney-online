@@ -1,9 +1,9 @@
-:ruby
-  title = 'Scenario Names Match'
-  description = <<~DESC
+- content_for :title do
+  Scenario Names Match
+    
+- content_for :description do
+  %p.block
     Some organisations enforce a naming convention on scenarios (linking to acceptance criteria,
     for example). This optional rule is disabled by default and in Chutney Online.
-  DESC
 
-= render partial: 'pages/rules/layout', locals: { title: title,
-                                                  description: description}
+= render partial: 'pages/rules/layout'

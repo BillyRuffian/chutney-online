@@ -1,9 +1,9 @@
-:ruby
-  title = 'Required Tags Start With'
-  description = <<~DESC
+- content_for :title do
+  Required Tags Start With...
+    
+- content_for :description do
+  %p.block
     Some organisations want to enforce a naming convention on tags. This is off
     by default and disabled in Chutney Online.
-  DESC
 
-= render partial: 'pages/rules/layout', locals: { title: title,
-                                                  description: description}
+= render partial: 'pages/rules/layout'

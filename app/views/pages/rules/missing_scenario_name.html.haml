@@ -5,5 +5,33 @@
     'Scenario: Customer requests a callback'.
   DESC
 
-= render partial: 'pages/rules/layout', locals: { title: title,
-                                                  description: description}
+- content_for :title do
+  Missing Scenario Name
+    
+- content_for :description do
+  %p.block
+    All scenarios should have a name that succinctly describes it
+
+- content_for :bad_example do
+  :preserve
+    Feature: My feature
+      As a Gherkin writer
+      I want to write good Gherkin
+      So my intent is clear
+      
+      Scenario:
+        When I write "Gherkin"
+        Then my Gherkin will be delicious
+
+- content_for :good_example do
+  :preserve
+    Feature: My feature
+      As a Gherkin writer
+      I want to write good Gherkin
+      So my intent is clear
+      
+      Scenario: My Scenario
+        When I write "Gherkin"
+        Then my Gherkin will be delicious
+
+= render partial: 'pages/rules/layout'

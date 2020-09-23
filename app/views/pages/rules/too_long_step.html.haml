@@ -1,8 +1,8 @@
-:ruby
-  title = 'Too Long a Step'
-  description = <<~DESC
+- content_for :title do
+  Too Long a Step
+    
+- content_for :description do
+  %p.block
     Very long steps are hard to read. Consider writing it more concisely.
-  DESC
 
-= render partial: 'pages/rules/layout', locals: { title: title,
-                                                  description: description}
+= render partial: 'pages/rules/layout'

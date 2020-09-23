@@ -1,11 +1,12 @@
-:ruby
-  title = 'Avoid Full Stops'
-  description = <<~DESC
+- content_for :title do
+  Avoid Full Stops
+
+- content_for :description do
+  %p.block
     You should avoid having full stops (periods) in your step definitions.
+  %p.block
     It makes it harder to reuse your steps in other places. While the goal is
     to make the specifications as readable and meaningful as possible, a full stop
     can break the flow of the language if you use it in some other step.
-  DESC
 
-= render partial: 'pages/rules/layout', locals: { title: title,
-                                                  description: description}
+= render partial: 'pages/rules/layout'

@@ -1,9 +1,9 @@
-:ruby
-  title = 'Too Many Different Tags'
-  description = <<~DESC
+- content_for :title do
+  Too Many Different Tags
+    
+- content_for :description do
+  %p.block
     If you have lots of different tags, it turns into tag-soup and becomes hard to read. Be wary of
     hiding behaviour behind tags.
-  DESC
 
-= render partial: 'pages/rules/layout', locals: { title: title,
-                                                  description: description}
+= render partial: 'pages/rules/layout'

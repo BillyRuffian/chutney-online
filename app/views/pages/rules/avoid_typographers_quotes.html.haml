@@ -1,11 +1,13 @@
-:ruby
-  title = 'Avoid Typographer\'s Quotes'
-  description = <<~DESC
+- content_for :title do
+  Avoid Typographer's Quotes
+    
+- content_for :description do
+  %p.block
     Typographer's quotes, or curly quotes, are not the same character as the one you type on
-    your keyboard. If you are using a word processor, it often changes the normal straight quote
+    your keyboard. 
+  %p.block
+    If you are using a word processor, it often changes the normal straight quote
     into a typographer's quote mark. This might not be what you intended and you should probably
     change it to a normal quotation mark.
-  DESC
 
-= render partial: 'pages/rules/layout', locals: { title: title,
-                                                  description: description}
+= render partial: 'pages/rules/layout'

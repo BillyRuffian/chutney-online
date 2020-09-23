@@ -1,9 +1,12 @@
-:ruby
-  title = 'File Name Differs from Feature Name'
-  description = <<~DESC
+- content_for :title do
+  File Name Differs from Feature Name
+    
+- content_for :description do
+  %p.block
     The name of the feature file should be equivalent to the feature name. 
     Making the names the same makes it much easier to find features.
-  DESC
+  %p.block
+    = link_to page_path('/rules/invalid_file_name') do
+      See also rule about file names.
 
-= render partial: 'pages/rules/layout', locals: { title: title,
-                                                  description: description}
+= render partial: 'pages/rules/layout'
