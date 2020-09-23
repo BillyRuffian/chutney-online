@@ -3,6 +3,16 @@ $body-background-color-x: #6ed27b;
 
 @import '~bulma';
 
+.site {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.site-content {
+  flex: 1;
+}
+
 .is-pickle {
   background-color: #6ed27b;
 }

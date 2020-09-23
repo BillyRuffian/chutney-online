@@ -15,7 +15,7 @@ require("channels")
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
-require("@vizuaalog/bulmajs")
+const bulma_parse = require("@vizuaalog/bulmajs").default.parseDocument
 
 import { config, library, dom } from '@fortawesome/fontawesome-svg-core'
 import { faShare as fasFaShare } from '@fortawesome/free-solid-svg-icons' // ES Module "as" syntax
@@ -25,4 +25,7 @@ config.mutateApproach = 'sync'
 library.add(fasFaShare, fasFaCheck, fasFaTimes)
 dom.watch()
 
+
 import '../stylesheets/application'
+
+document.addEventListener('turbolinks:render', function() { bulma_parse() })
