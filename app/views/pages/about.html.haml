@@ -1,2 +1,32 @@
-%p
-  hello world
+%section.hero.is-success
+  .hero-body
+    .container
+      %h1.title Chutney
+      %h2.subtitle The linter for Cucumber and Gherkin
+
+%section.container.py-6
+  %p.block
+    %strong Writing Gherkin is easy. Writing good Gherkin is hard.
+  %p.block
+    Chutney is tool that runs Gherkin feature files through a set of rules
+    to check if some of the best-practices have been applied.
+  %p.block
+    = link_to 'Chutney', 'https://rubygems.org/gems/chutney'
+    is an Open Source 
+    = surround '(', ')' do 
+      = link_to 'MIT licensed', 'https://raw.githubusercontent.com/BillyRuffian/chutney/master/LICENSE.txt' 
+    Ruby language which will check
+    (or 'lint') your feature files. This works great for developers, engineers
+    and testers but BAs or Product Owners might not know, want or care to configure
+    their computer to do this.
+  %p.block
+    Chutney Online lets you quickly run your Gherkin through Chutney's default
+    rules to see how they taste.
+  %p.block
+    If there is a feature or a bug on Chutney Online, please raise an issue
+    = succeed ',' do
+      = link_to 'here', 'https://github.com/BillyRuffian/chutney-online/issues'
+    or if there is a problem with one of the rules or you would like to request 
+    a new rule, please raise an issue
+    = succeed '.' do
+      = link_to 'here', 'https://github.com/BillyRuffian/chutney/issues'
